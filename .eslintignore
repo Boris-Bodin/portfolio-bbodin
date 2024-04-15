@@ -1,0 +1,4 @@
+# Ignore miscellaneous folders
+/.idea/
+/.next/
+/node_modules/
