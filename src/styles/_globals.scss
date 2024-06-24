@@ -1,10 +1,15 @@
 @layer base {
+    html,
+    body {
+        @apply h-full w-full;
+    }
+
     * {
         font-family: 'Roboto', sans-serif;
     }
 
     h1 {
-        @apply text-3xl font-bold text-red-500;
+        @apply text-3xl font-bold;
     }
 
     h2 {

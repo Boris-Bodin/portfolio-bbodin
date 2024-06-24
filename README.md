@@ -23,3 +23,23 @@
 To fix the issue discussed [here](https://github.com/eslint/eslint/discussions/17215), we have added `"strip-ansi": "6.0.1",` to the `package.json`.
 
 Stay tuned for more updates!
+
+## Getting Started
+
+First, install the dependencies:
+
+```bash
+yarn install
+```
+
+[//]: # 'Then, run the local database:'
+[//]: #
+[//]: # '```bash'
+[//]: # 'yarn db'
+[//]: # '```'
+
+Finally, run the development server:
+
+```bash
+yarn dev
+```
