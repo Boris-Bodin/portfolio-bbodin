@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import {Box, IconButton} from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 // import MediumIcon from '@mui/icons-material/Medium';
 // import DzoneIcon from '@mui/icons-material/Dzone';
@@ -10,17 +9,9 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 // import TiktokIcon from '@mui/icons-material/Tiktok';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import TextIconButton from '../../../design-system/components/social-button/TextIconButton';
 
-type SocialMediaType =
-    // 'TWITCH' |
-    | 'INSTAGRAM'
-    // 'MEDIUM' |
-    | 'LINKEDIN'
-    // 'TIKTOK' |
-    | 'YOU_TUBE'
-    // 'DZONE' |
-    | 'PORTFOLIO'
-    | 'TWITTER';
+type SocialMediaType = 'TWITCH' | 'INSTAGRAM' | 'MEDIUM' | 'LINKEDIN' | 'TIKTOK' | 'YOU_TUBE' | 'DZONE' | 'PORTFOLIO' | 'TWITTER';
 
 const SocialMedia: {[key: string]: {name: string; icon: React.JSX.Element}} = {
     PORTFOLIO: {
@@ -68,28 +59,9 @@ export default function SocialButton(props: {media: SocialMediaType; url: string
         return null;
     }
 
-    const mediaIcon = mediaElement.icon;
-    const mediaName = mediaElement.name;
-
     const open = () => {
         window.open(props.url, '_blank');
     };
 
-    return (
-        <Box
-            sx={{
-                backgroundColor: 'white',
-                padding: '5px',
-                display: 'flex',
-                alignItems: 'center',
-                borderRadius: '25px',
-                minWidth: '250px',
-            }}
-            onClick={open}>
-            <IconButton color='primary' aria-label={mediaName}>
-                {mediaIcon}
-            </IconButton>
-            <Box sx={{flex: 'auto', textAlign: 'center'}}>{mediaName}</Box>
-        </Box>
-    );
+    return <TextIconButton icon={mediaElement.icon} text={mediaElement.name} onClick={open} />;
 }
