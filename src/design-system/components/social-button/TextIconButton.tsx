@@ -8,18 +8,19 @@ type TextIconButtonParams = {
     onClick: () => void;
 };
 
+const style = {
+    backgroundColor: 'white',
+    pointer: 'cursor',
+    padding: '5px',
+    display: 'flex',
+    alignItems: 'center',
+    borderRadius: '25px',
+    minWidth: '250px',
+};
+
 export default function TextIconButton(props: TextIconButtonParams) {
     return (
-        <Box
-            sx={{
-                backgroundColor: 'white',
-                padding: '5px',
-                display: 'flex',
-                alignItems: 'center',
-                borderRadius: '25px',
-                minWidth: '250px',
-            }}
-            onClick={props.onClick}>
+        <Box sx={style} onClick={props.onClick}>
             <IconButton aria-label={props.text}>{props.icon}</IconButton>
             <Box sx={{flex: 'auto', textAlign: 'center'}}>{props.text}</Box>
         </Box>
