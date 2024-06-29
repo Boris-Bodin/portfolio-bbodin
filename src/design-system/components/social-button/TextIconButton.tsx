@@ -10,7 +10,7 @@ type TextIconButtonParams = {
 
 const style = {
     backgroundColor: 'white',
-    pointer: 'cursor',
+    cursor: 'pointer',
     padding: '5px',
     display: 'flex',
     alignItems: 'center',
