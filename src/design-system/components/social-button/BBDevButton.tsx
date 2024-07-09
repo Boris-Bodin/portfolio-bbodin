@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import {Box, Button} from '@mui/material';
+import {Button, Typography} from '@mui/material';
 
 type TextIconButtonParams = {
     icon: React.JSX.Element;
@@ -23,7 +23,9 @@ export default function BBDevButton(props: TextIconButtonParams) {
 
     return (
         <Button sx={style} color={'primary'} variant={'contained'} onClick={onClick} startIcon={props.icon}>
-            <Box sx={{flex: 'auto', textAlign: 'center'}}>{props.text}</Box>
+            <Typography sx={{flex: 'auto'}} align={'center'}>
+                {props.text}
+            </Typography>
         </Button>
     );
 }

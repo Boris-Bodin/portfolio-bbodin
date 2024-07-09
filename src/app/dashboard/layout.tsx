@@ -1,7 +1,6 @@
 import React from 'react';
 import {Metadata} from 'next';
 
-import '@/styles/styles.scss';
 import {AppBar, Avatar, Box, Button, Container, Toolbar} from '@mui/material';
 import Link from 'next/link';
 

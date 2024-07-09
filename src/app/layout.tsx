@@ -2,6 +2,7 @@ import React from 'react';
 import {Metadata} from 'next';
 
 import '@/styles/styles.scss';
+import ThemeWrapper from '../design-system/theme';
 
 export const metadata: Metadata = {
     title: 'Boris Bodin • Website',
@@ -18,7 +19,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                 {/*<meta name="robots" content="noindex, nofollow" />*/}
                 <link rel='icon' href='https://www.google.com/s2/favicons?sz=64&amp;domain_url=bbodin.dev' />
             </head>
-            <body suppressHydrationWarning={true}>{children}</body>
+            <body suppressHydrationWarning={true}>
+                <ThemeWrapper>{children}</ThemeWrapper>
+            </body>
         </html>
     );
 }
