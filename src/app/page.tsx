@@ -28,7 +28,11 @@ export default function Page() {
                     <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px'}}>
                         <SocialButton media={'PORTFOLIO'} url={'/dashboard/'} />
                         <SocialButton media={'LINKEDIN'} url={'https://www.linkedin.com/in/boris-bodin/'} />
+                        <SocialButton media={'MEDIUM'} url={'https://medium.aegis-techno.fr/'} />
+                        <SocialButton media={'DZONE'} url={'https://dzone.com/users/5012530/borisbodin.html'} />
                         <SocialButton media={'TWITTER'} url={'https://twitter.com/borisbodin'} />
+                        <SocialButton media={'TWITCH'} url={'https://www.twitch.tv/boris_bodin'} />
+                        <SocialButton media={'TIKTOK'} url={'https://www.tiktok.com/@boris.bodin'} />
                         <SocialButton media={'INSTAGRAM'} url={'https://www.instagram.com/borisbodin/'} />
                         <SocialButton media={'YOU_TUBE'} url={'https://www.youtube.com/channel/UCrGJIKIHNlDKwIPac9UML6g'} />
                     </Box>

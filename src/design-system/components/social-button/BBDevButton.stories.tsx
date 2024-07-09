@@ -1,16 +1,16 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import TextIconButton from './TextIconButton';
+import BBDevButton from './BBDevButton';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 
 const meta = {
-    title: 'MUI/Components/Button',
-    component: TextIconButton,
+    title: 'MUI/Components/BBDev Button',
+    component: BBDevButton,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
     argTypes: {},
-} satisfies Meta<typeof TextIconButton>;
+} satisfies Meta<typeof BBDevButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
