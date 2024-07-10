@@ -8,7 +8,7 @@ export default function Page() {
     return (
         <>
             <Container maxWidth='lg' sx={{mt: 4, mb: 4}}>
-                <Box className={styles.hero}>
+                <Box className={styles['hero']}>
                     <Typography variant='h3' component='h1' gutterBottom>
                         Welcome to My Portfolio
                     </Typography>
@@ -21,10 +21,10 @@ export default function Page() {
                     </Typography>
                 </Box>
 
-                <Grid container spacing={4} className={styles.gridContainer}>
+                <Grid container spacing={4} className={styles['gridContainer']}>
                     <Grid item xs={12} md={4}>
                         <Link href={'/dashboard/skills'}>
-                            <Paper elevation={3} className={styles.paper}>
+                            <Paper elevation={3} className={styles['paper']}>
                                 <IconButton color='primary' aria-label='skills'>
                                     <Code fontSize='large' />
                                 </IconButton>
@@ -37,7 +37,7 @@ export default function Page() {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Link href={'/dashboard/projects'}>
-                            <Paper elevation={3} className={styles.paper}>
+                            <Paper elevation={3} className={styles['paper']}>
                                 <IconButton color='primary' aria-label='projects'>
                                     <Folder fontSize='large' />
                                 </IconButton>
@@ -50,7 +50,7 @@ export default function Page() {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Link href={'/dashboard/courses'}>
-                            <Paper elevation={3} className={styles.paper}>
+                            <Paper elevation={3} className={styles['paper']}>
                                 <IconButton color='primary' aria-label='courses'>
                                     <School fontSize='large' />
                                 </IconButton>
@@ -63,7 +63,7 @@ export default function Page() {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Link href={'/dashboard/contact'}>
-                            <Paper elevation={3} className={styles.paper}>
+                            <Paper elevation={3} className={styles['paper']}>
                                 <IconButton color='primary' aria-label='contact'>
                                     <Email fontSize='large' />
                                 </IconButton>
@@ -76,7 +76,7 @@ export default function Page() {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Link href={'/dashboard/blogs'}>
-                            <Paper elevation={3} className={styles.paper}>
+                            <Paper elevation={3} className={styles['paper']}>
                                 <IconButton color='primary' aria-label='blogs'>
                                     <Article fontSize='large' />
                                 </IconButton>

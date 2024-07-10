@@ -2,7 +2,9 @@ import React from 'react';
 import {Metadata} from 'next';
 
 import '@/styles/styles.scss';
-import ThemeWrapper from '../design-system/theme';
+import {AppRouterCacheProvider} from '@mui/material-nextjs/v13-appRouter';
+import theme from '../design-system/theme';
+import {CssBaseline, Experimental_CssVarsProvider} from '@mui/material';
 
 export const metadata: Metadata = {
     title: 'Boris Bodin • Website',
@@ -20,7 +22,14 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                 <link rel='icon' href='https://www.google.com/s2/favicons?sz=64&amp;domain_url=bbodin.dev' />
             </head>
             <body suppressHydrationWarning={true}>
-                <ThemeWrapper>{children}</ThemeWrapper>
+                <React.StrictMode>
+                    <AppRouterCacheProvider>
+                        <Experimental_CssVarsProvider theme={theme}>
+                            <CssBaseline />
+                            {children}
+                        </Experimental_CssVarsProvider>
+                    </AppRouterCacheProvider>
+                </React.StrictMode>
             </body>
         </html>
     );

@@ -2,7 +2,6 @@
 import React, {useEffect, useState} from 'react';
 import {Container, Grid, Paper, Typography, Box, Button, CircularProgress} from '@mui/material';
 import styles from '@/styles/components/Blogs.module.scss';
-
 import getMediumPost from '@/app/dashboard/blogs/actions';
 
 interface Article {
@@ -26,7 +25,7 @@ export default function BlogsPage() {
                     title: item.title || '',
                     link: item.link || '',
                     contentSnippet: item.contentSnippet || '',
-                    image: '<img' + item.content.split('<img')[1].split('>')[0] + '>' || '',
+                    image: item.content.split('src="')[1].split('"')[0] || '',
                     isoDate: item.isoDate || '',
                 }));
                 setArticles(items);
@@ -50,22 +49,24 @@ export default function BlogsPage() {
 
     return (
         <Container maxWidth='lg' sx={{mt: 4, mb: 4}}>
-            <Typography variant='h3' component='h1' gutterBottom className={styles.header}>
+            <Typography variant='h3' component='h1' gutterBottom className={styles['header']}>
                 My Blog
             </Typography>
-            <Typography variant='body1' paragraph className={styles.description}>
+            <Typography variant='body1' paragraph className={styles['description']}>
                 Here are the latest articles from my Medium blog.
             </Typography>
             <Grid container spacing={4}>
                 {articles.map((article, index) => (
                     <Grid item xs={12} md={4} key={index}>
-                        <Paper elevation={3} className={styles.blogCard}>
-                            <Box className={styles.blogContent}>
-                                <div dangerouslySetInnerHTML={{__html: article.image}}></div>
-                                <Typography variant='h6' component='h3' className={styles.blogTitle}>
+                        <Paper elevation={3} className={styles['blogCard']}>
+                            <Box className={styles['imageContainer']}>
+                                <img src={article.image} alt={article.title} className={styles['blogImage']} />
+                            </Box>
+                            <Box className={styles['blogContent']}>
+                                <Typography variant='h6' component='h3' className={styles['blogTitle']}>
                                     {article.title}
                                 </Typography>
-                                <Typography variant='body2' className={styles.blogDescription}>
+                                <Typography variant='body2' className={styles['blogDescription']}>
                                     {article.contentSnippet}
                                 </Typography>
                                 <Button
@@ -74,7 +75,7 @@ export default function BlogsPage() {
                                     href={article.link}
                                     target='_blank'
                                     rel='noopener'
-                                    className={styles.blogButton}>
+                                    className={styles['blogButton']}>
                                     Read More
                                 </Button>
                             </Box>

@@ -1,26 +1,27 @@
 'use client';
-import {createTheme} from '@mui/material/styles';
-import React from 'react';
-import {CssBaseline, Experimental_CssVarsProvider as CssVarsProvider, experimental_extendTheme} from '@mui/material';
-import {ThemeProvider} from '@mui/system';
+import {experimental_extendTheme} from '@mui/material';
 
 const theme = experimental_extendTheme({
-    palette: {
-        primary: {
-            main: '#0D47A1', // A deep blue color
-            contrastText: '#FFFFFF', // White text
-        },
-        secondary: {
-            main: '#FF5722', // A vibrant orange color
-            contrastText: '#FFFFFF', // White text
-        },
-        background: {
-            default: '#F5F5F5', // A light grey background
-            paper: '#FFFFFF', // White paper background
-        },
-        text: {
-            primary: '#212121', // Dark grey text
-            secondary: '#757575', // Medium grey text
+    colorSchemes: {
+        light: {
+            palette: {
+                primary: {
+                    main: '#0D47A1', // A deep blue color
+                    contrastText: '#FFFFFF', // White text
+                },
+                secondary: {
+                    main: '#FF5722', // A vibrant orange color
+                    contrastText: '#FFFFFF', // White text
+                },
+                background: {
+                    default: '#F5F5F5', // A light grey background
+                    paper: '#FFFFFF', // White paper background
+                },
+                text: {
+                    primary: '#212121', // Dark grey text
+                    secondary: '#757575', // Medium grey text
+                },
+            },
         },
     },
     typography: {
@@ -72,22 +73,13 @@ const theme = experimental_extendTheme({
                 root: {
                     borderRadius: '8px',
                     textTransform: 'none',
-                },
-                containedPrimary: {
-                    color: '#FFFFFF',
+                    'contained.colorPrimary': {
+                        color: '#FFFFFF',
+                    },
                 },
             },
         },
     },
 });
 
-export default function ThemeWrapper({children}: {children: React.ReactNode}) {
-    return (
-        <>
-            <CssBaseline />
-            <ThemeProvider theme={theme}>
-                <CssVarsProvider theme={theme}>{children}</CssVarsProvider>
-            </ThemeProvider>
-        </>
-    );
-}
+export default theme;

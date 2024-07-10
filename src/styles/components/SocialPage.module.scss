@@ -1,0 +1,40 @@
+.wrapper {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    background-image: url(/images/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.panel {
+    padding: 64px 16px 32px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &-title {
+        @apply text-lg text-white;
+    }
+
+    &-description {
+        @apply text-center text-[16px] font-[500] leading-[1.5] text-white;
+    }
+}

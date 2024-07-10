@@ -15,22 +15,22 @@ const skills = [
 export default function SkillsPage() {
     return (
         <Container maxWidth='lg' sx={{mt: 4, mb: 4}}>
-            <Typography variant='h3' component='h1' gutterBottom className={styles.header}>
+            <Typography variant='h3' component='h1' gutterBottom className={styles['header']}>
                 My Skills
             </Typography>
-            <Typography variant='body1' paragraph className={styles.description}>
+            <Typography variant='body1' paragraph className={styles['description']}>
                 Here are some of the technical skills I&apos;ve acquired over the years.
             </Typography>
             <Grid container spacing={4}>
                 {skills.map((skill, index) => (
                     <Grid item xs={12} md={4} key={index}>
-                        <Paper elevation={3} className={styles.skillCard}>
+                        <Paper elevation={3} className={styles['skillCard']}>
                             <Box display='flex' flexDirection='column' alignItems='center'>
                                 {skill.icon}
-                                <Typography variant='h6' component='h3' className={styles.skillTitle}>
+                                <Typography variant='h6' component='h3' className={styles['skillTitle']}>
                                     {skill.title}
                                 </Typography>
-                                <Typography variant='body2' className={styles.skillDescription}>
+                                <Typography variant='body2' className={styles['skillDescription']}>
                                     {skill.description}
                                 </Typography>
                             </Box>
