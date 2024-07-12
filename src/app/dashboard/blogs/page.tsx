@@ -1,8 +1,9 @@
 'use client';
-import React, {useEffect, useState} from 'react';
-import {Container, Grid, Paper, Typography, Box, Button, CircularProgress} from '@mui/material';
-import styles from '@/styles/components/Blogs.module.scss';
+import React, {MouseEvent, useEffect, useState} from 'react';
+import {Box, CircularProgress, Container, Grid} from '@mui/material';
 import getMediumPost from '@/app/dashboard/blogs/actions';
+import BBDevPageHeader from '../../../design-system/components/page-header/BBDevPageHeader';
+import BBDevCard from '../../../design-system/components/card/BBDevCard';
 
 interface Article {
     title: string;
@@ -20,7 +21,6 @@ export default function BlogsPage() {
         const fetchArticles = async () => {
             try {
                 const data = await getMediumPost();
-                console.log(data);
                 const items = data.map((item: any) => ({
                     title: item.title || '',
                     link: item.link || '',
@@ -47,39 +47,22 @@ export default function BlogsPage() {
         );
     }
 
+    const openArticle = (link: string) => {
+        return (event: MouseEvent<Element>) => window.open(link, '_blank');
+    };
+
     return (
         <Container maxWidth='lg' sx={{mt: 4, mb: 4}}>
-            <Typography variant='h3' component='h1' gutterBottom className={styles['header']}>
-                My Blog
-            </Typography>
-            <Typography variant='body1' paragraph className={styles['description']}>
-                Here are the latest articles from my Medium blog.
-            </Typography>
+            <BBDevPageHeader title={'My Blog'} subTitle={['Here are the latest articles.']}></BBDevPageHeader>
             <Grid container spacing={4}>
                 {articles.map((article, index) => (
-                    <Grid item xs={12} md={4} key={index}>
-                        <Paper elevation={3} className={styles['blogCard']}>
-                            <Box className={styles['imageContainer']}>
-                                <img src={article.image} alt={article.title} className={styles['blogImage']} />
-                            </Box>
-                            <Box className={styles['blogContent']}>
-                                <Typography variant='h6' component='h3' className={styles['blogTitle']}>
-                                    {article.title}
-                                </Typography>
-                                <Typography variant='body2' className={styles['blogDescription']}>
-                                    {article.contentSnippet}
-                                </Typography>
-                                <Button
-                                    variant='contained'
-                                    color='primary'
-                                    href={article.link}
-                                    target='_blank'
-                                    rel='noopener'
-                                    className={styles['blogButton']}>
-                                    Read More
-                                </Button>
-                            </Box>
-                        </Paper>
+                    <Grid item xs={12} md={4} key={index} className={'grid-item'}>
+                        <BBDevCard
+                            title={article.title}
+                            description={article.contentSnippet}
+                            image={article.image}
+                            actionTitle={'Read more'}
+                            action={openArticle(article.link)}></BBDevCard>
                     </Grid>
                 ))}
             </Grid>

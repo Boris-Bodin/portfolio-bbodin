@@ -1,6 +1,8 @@
-import React from 'react';
-import {Container, Grid, Paper, Typography, Box, Button} from '@mui/material';
-import styles from '@/styles/components/Courses.module.scss';
+'use client';
+import React, {MouseEvent} from 'react';
+import {Container, Grid} from '@mui/material';
+import BBDevPageHeader from '../../../design-system/components/page-header/BBDevPageHeader';
+import BBDevCard from '../../../design-system/components/card/BBDevCard';
 
 const courses = [
     {
@@ -24,39 +26,24 @@ const courses = [
 ];
 
 export default function CoursesPage() {
+    const openCourse = (link: string) => {
+        return (event: MouseEvent<Element>) => window.open(link, '_blank');
+    };
+
     return (
         <Container maxWidth='lg' sx={{mt: 4, mb: 4}}>
-            <Typography variant='h3' component='h1' gutterBottom className={styles['header']}>
-                My Courses
-            </Typography>
-            <Typography variant='body1' paragraph className={styles['description']}>
-                Here are some of the courses I&apos;ve created or taught.
-            </Typography>
+            <BBDevPageHeader
+                title={'My Courses'}
+                subTitle={["Here are some of the courses I've created or taught."]}></BBDevPageHeader>
             <Grid container spacing={4}>
                 {courses.map((course, index) => (
                     <Grid item xs={12} md={4} key={index}>
-                        <Paper elevation={3} className={styles['courseCard']}>
-                            <Box className={styles['imageContainer']}>
-                                <img src={course.image} alt={course.title} className={styles['courseImage']} />
-                            </Box>
-                            <Box className={styles['courseContent']}>
-                                <Typography variant='h6' component='h3' className={styles['courseTitle']}>
-                                    {course.title}
-                                </Typography>
-                                <Typography variant='body2' className={styles['courseDescription']}>
-                                    {course.description}
-                                </Typography>
-                                <Button
-                                    variant='contained'
-                                    color='primary'
-                                    href={course.link}
-                                    target='_blank'
-                                    rel='noopener'
-                                    className={styles['courseButton']}>
-                                    View Course
-                                </Button>
-                            </Box>
-                        </Paper>
+                        <BBDevCard
+                            title={course.title}
+                            description={course.description}
+                            image={course.image}
+                            actionTitle={'View Course'}
+                            action={openCourse(course.link)}></BBDevCard>
                     </Grid>
                 ))}
             </Grid>

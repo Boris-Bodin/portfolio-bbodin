@@ -1,31 +1,24 @@
+'use client';
 import React from 'react';
-import {Box, Container, Grid, Paper, Typography} from '@mui/material';
+import {Container, Grid} from '@mui/material';
 import {Email} from '@mui/icons-material';
-import styles from '@/styles/components/Contact.module.scss';
+import BBDevPageHeader from '../../../design-system/components/page-header/BBDevPageHeader';
+import BBDevCard from '../../../design-system/components/card/BBDevCard';
 
 export default function ContactPage() {
     return (
         <Container maxWidth='lg' sx={{mt: 4, mb: 4}}>
-            <Typography variant='h3' component='h1' gutterBottom className={styles['header']}>
-                Contact Me
-            </Typography>
-            <Typography variant='body1' paragraph className={styles['description']}>
-                I&apos;d love to hear from you! Whether you have a question about my work, want to collaborate, or just want to
-                say hello, feel free to reach out.
-            </Typography>
+            <BBDevPageHeader
+                title={'Contact Me'}
+                subTitle={[
+                    "I'd love to hear from you! Whether you have a question about my work, want to collaborate, or just want to say hello, feel free to reach out.",
+                ]}></BBDevPageHeader>
             <Grid container spacing={4}>
                 <Grid item xs={12} md={6}>
-                    <Paper elevation={3} className={styles['contactCard']}>
-                        <Box className={styles['contactInfo']}>
-                            <Email fontSize='large' />
-                            <Typography variant='h6' component='h3' className={styles['contactTitle']}>
-                                Email
-                            </Typography>
-                            <Typography variant='body2' className={styles['contactDescription']}>
-                                boris.bodin@aegis-techno.com
-                            </Typography>
-                        </Box>
-                    </Paper>
+                    <BBDevCard
+                        title={'Email'}
+                        description={'boris.bodin@aegis-techno.com'}
+                        icon={<Email fontSize='large' />}></BBDevCard>
                 </Grid>
                 {/*<Grid item xs={12} md={6}>*/}
                 {/*    <Paper elevation={3} className={styles['contactCard']}>*/}

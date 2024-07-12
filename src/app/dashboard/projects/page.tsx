@@ -1,6 +1,8 @@
-import React from 'react';
-import {Container, Grid, Paper, Typography, Box, Button} from '@mui/material';
-import styles from '@/styles/components/Projects.module.scss';
+'use client';
+import React, {MouseEvent} from 'react';
+import {Container, Grid} from '@mui/material';
+import BBDevPageHeader from '../../../design-system/components/page-header/BBDevPageHeader';
+import BBDevCard from '../../../design-system/components/card/BBDevCard';
 
 const projects = [
     {
@@ -24,39 +26,22 @@ const projects = [
 ];
 
 export default function ProjectsPage() {
+    const openProject = (link: string) => {
+        return (event: MouseEvent<Element>) => window.open(link, '_blank');
+    };
+
     return (
         <Container maxWidth='lg' sx={{mt: 4, mb: 4}}>
-            <Typography variant='h3' component='h1' gutterBottom className={styles['header']}>
-                My Projects
-            </Typography>
-            <Typography variant='body1' paragraph className={styles['description']}>
-                Here are some of the projects I&apos;ve worked on.
-            </Typography>
+            <BBDevPageHeader title={'My Projects'} subTitle={["Here are some of the projects I've worked on."]}></BBDevPageHeader>
             <Grid container spacing={4}>
                 {projects.map((project, index) => (
                     <Grid item xs={12} md={4} key={index}>
-                        <Paper elevation={3} className={styles['projectCard']}>
-                            <Box className={styles['imageContainer']}>
-                                <img src={project.image} alt={project.title} className={styles['projectImage']} />
-                            </Box>
-                            <Box className={styles['projectContent']}>
-                                <Typography variant='h6' component='h3' className={styles['projectTitle']}>
-                                    {project.title}
-                                </Typography>
-                                <Typography variant='body2' className={styles['projectDescription']}>
-                                    {project.description}
-                                </Typography>
-                                <Button
-                                    variant='contained'
-                                    color='primary'
-                                    href={project.link}
-                                    target='_blank'
-                                    rel='noopener'
-                                    className={styles['projectButton']}>
-                                    View Project
-                                </Button>
-                            </Box>
-                        </Paper>
+                        <BBDevCard
+                            title={project.title}
+                            description={project.description}
+                            image={project.image}
+                            actionTitle={'View Project'}
+                            action={openProject(project.link)}></BBDevCard>
                     </Grid>
                 ))}
             </Grid>
