@@ -4,11 +4,15 @@
 }
 
 .grid-item {
-    @apply flex;
+    display: flex;
+
     & > * {
-        @apply flex flex-auto flex-col;
+        display: flex;
+        flex-direction: column;
+        flex: auto;
+
         & > * {
-            @apply flex-auto;
+            flex: auto;
         }
     }
 }

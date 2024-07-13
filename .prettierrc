@@ -17,7 +17,6 @@
     "vueIndentScriptAndStyle": true,
     "tabWidth": 4,
     "printWidth": 130,
-    "plugins": ["prettier-plugin-organize-attributes", "prettier-plugin-packagejson", "prettier-plugin-tailwindcss"],
-    "attributeGroups": ["^#", "^class$", "^(id|name)$", "$DEFAULT", "^aria-"],
-    "tailwindConfig": "./tailwind.config.js"
+    "plugins": ["prettier-plugin-organize-attributes", "prettier-plugin-packagejson"],
+    "attributeGroups": ["^#", "^class$", "^(id|name)$", "$DEFAULT", "^aria-"]
 }

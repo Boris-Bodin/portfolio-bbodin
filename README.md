@@ -12,7 +12,6 @@
 -   ESLint for code linting
 -   Prettier for code formatting
 -   Husky for Git hooks
--   Tailwind CSS for utility-first CSS
 -   SASS for advanced CSS features
 -   Vitest for testing
 -   StoryBook for component development
