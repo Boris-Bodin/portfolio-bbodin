@@ -1,25 +1,25 @@
 import React from 'react';
-import {Avatar, Box, Container} from '@mui/material';
+import {Avatar, Box, Container, Typography} from '@mui/material';
 import SocialButton from '@/shared/components/social-button/SocialButton';
 import styles from '@/styles/components/SocialPage.module.scss';
 
 export default function Page() {
     return (
-        <Box className={styles['wrapper']}>
+        <Box className={styles['container']}>
             <Container maxWidth='sm' className={styles['panel']}>
                 <Box className={styles['profil']}>
                     <Avatar alt='Boris Bodin' src='/images/avatar.jpg' sx={{height: 96, width: 96}} />
                     <Box className={styles['profil-text']}>
-                        <h1 className={styles['profil-title']}>Boris Bodin</h1>
-                        <h2 className={styles['profil-description']}>
+                        <Typography variant='h3' component='h1' className={styles['profil-title']}>
+                            Boris Bodin
+                        </Typography>
+                        <Typography variant='h4' component='h2' className={styles['profil-description']}>
                             A jack-of-all-trades, computer development, cooking, music, video, writing, sketching, video games,
                             you name it!
-                        </h2>
+                        </Typography>
                     </Box>
                 </Box>
-                <Box
-                    className={styles['social-groups']}
-                    sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px'}}>
+                <Box className={styles['social-groups']}>
                     <SocialButton media={'PORTFOLIO'} url={'/dashboard/'} />
                     <SocialButton media={'LINKEDIN'} url={'https://www.linkedin.com/in/boris-bodin/'} />
                     <SocialButton media={'MEDIUM'} url={'https://medium.aegis-techno.fr/'} />

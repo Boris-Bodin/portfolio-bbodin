@@ -19,7 +19,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                 <meta charSet='utf-8' />
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
                 {/*<meta name="robots" content="noindex, nofollow" />*/}
-                <link rel='icon' href='https://www.google.com/s2/favicons?sz=64&amp;domain_url=bbodin.dev' />
+                <link rel='icon' sizes='16x16' href='/images/favicon-16x16.png' />
+                <link rel='icon' sizes='32x32' href='/images/favicon-32x32.png' />
+                <link rel='icon' href='/images/favicon.ico' />
             </head>
             <body suppressHydrationWarning={true}>
                 <React.StrictMode>
