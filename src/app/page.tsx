@@ -1,25 +1,73 @@
+'use client';
 import React from 'react';
-import {Avatar, Box, Container, Typography} from '@mui/material';
+import {Avatar, Box, Container, styled, Typography} from '@mui/material';
 import SocialButton from '@/shared/components/social-button/SocialButton';
-import styles from '@/styles/components/SocialPage.module.scss';
+
+const SocialPageContainer = styled(Box)(({theme}) => ({
+    backgroundColor: 'black',
+    height: '100%',
+    width: '100%',
+    backgroundImage: 'url(/images/banner.png)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundAttachment: 'fixed',
+}));
+
+const SocialPagePanel = styled(Container)(({theme}) => ({
+    padding: '64px 16px 32px',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    display: 'flex !important',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '20px',
+    overflow: 'auto',
+}));
+
+const ProfilSection = styled(Box)(({theme}) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '10px',
+}));
+
+const ProfilTextSection = styled(Box)(({theme}) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '5px',
+    color: 'white',
+}));
+
+const ProfilDescription = styled(Typography)(({theme}) => ({
+    textAlign: 'center',
+    fontSize: '16px',
+}));
+
+const SocialGroupPanel = styled(Container)(({theme}) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '10px',
+}));
 
 export default function Page() {
     return (
-        <Box className={styles['container']}>
-            <Container maxWidth='sm' className={styles['panel']}>
-                <Box className={styles['profil']}>
+        <SocialPageContainer>
+            <SocialPagePanel maxWidth='sm'>
+                <ProfilSection>
                     <Avatar alt='Boris Bodin' src='/images/avatar.jpg' sx={{height: 96, width: 96}} />
-                    <Box className={styles['profil-text']}>
-                        <Typography variant='h3' component='h1' className={styles['profil-title']}>
+                    <ProfilTextSection>
+                        <Typography variant='h3' component='h1'>
                             Boris Bodin
                         </Typography>
-                        <Typography variant='h4' component='h2' className={styles['profil-description']}>
+                        <ProfilDescription variant='h4' component='h2'>
                             A jack-of-all-trades, computer development, cooking, music, video, writing, sketching, video games,
                             you name it!
-                        </Typography>
-                    </Box>
-                </Box>
-                <Box className={styles['social-groups']}>
+                        </ProfilDescription>
+                    </ProfilTextSection>
+                </ProfilSection>
+                <SocialGroupPanel>
                     <SocialButton media={'PORTFOLIO'} url={'/dashboard/'} />
                     <SocialButton media={'LINKEDIN'} url={'https://www.linkedin.com/in/boris-bodin/'} />
                     <SocialButton media={'MEDIUM'} url={'https://medium.aegis-techno.fr/'} />
@@ -29,8 +77,8 @@ export default function Page() {
                     <SocialButton media={'TIKTOK'} url={'https://www.tiktok.com/@boris.bodin'} />
                     <SocialButton media={'INSTAGRAM'} url={'https://www.instagram.com/borisbodin/'} />
                     <SocialButton media={'YOU_TUBE'} url={'https://www.youtube.com/channel/UCrGJIKIHNlDKwIPac9UML6g'} />
-                </Box>
-            </Container>
-        </Box>
+                </SocialGroupPanel>
+            </SocialPagePanel>
+        </SocialPageContainer>
     );
 }

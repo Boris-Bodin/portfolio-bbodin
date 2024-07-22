@@ -5,7 +5,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import BBDevButton from '../../../design-system/components/social-button/BBDevButton';
+import BBDevButton from '../../../design-system/components/button/BBDevButton';
 
 type SocialMediaType = 'TWITCH' | 'INSTAGRAM' | 'MEDIUM' | 'LINKEDIN' | 'TIKTOK' | 'YOU_TUBE' | 'DZONE' | 'PORTFOLIO' | 'TWITTER';
 

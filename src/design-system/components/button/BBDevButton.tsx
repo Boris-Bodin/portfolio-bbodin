@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import {Button, Typography} from '@mui/material';
+import {Button, styled, Typography} from '@mui/material';
 
 type BBDevButtonParams = {
     icon: React.JSX.Element;
@@ -8,11 +8,15 @@ type BBDevButtonParams = {
     onClick: () => void;
 };
 
-const style = {
+const StyledButton = styled(Button)(({theme}) => ({
     borderRadius: '25px',
     padding: '12px 16px',
     minWidth: '250px',
-};
+}));
+
+const StyledText = styled(Typography)(({theme}) => ({
+    flex: 'auto',
+}));
 
 export default function BBDevButton(props: BBDevButtonParams) {
     const onClick = () => {
@@ -22,10 +26,8 @@ export default function BBDevButton(props: BBDevButtonParams) {
     };
 
     return (
-        <Button sx={style} color={'primary'} variant={'contained'} onClick={onClick} startIcon={props.icon}>
-            <Typography sx={{flex: 'auto'}} align={'center'}>
-                {props.text}
-            </Typography>
-        </Button>
+        <StyledButton color={'primary'} variant={'contained'} onClick={onClick} startIcon={props.icon}>
+            <StyledText align={'center'}>{props.text}</StyledText>
+        </StyledButton>
     );
 }
