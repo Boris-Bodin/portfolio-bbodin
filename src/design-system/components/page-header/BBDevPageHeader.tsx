@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
-import {Box, Typography} from '@mui/material';
-import styles from './BBDevPageHeader.module.scss';
+import {Box, styled, Typography} from '@mui/material';
 
 type BBDevPageHeaderParams = {
     children?: React.ReactNode;
@@ -9,20 +8,38 @@ type BBDevPageHeaderParams = {
     subTitle: Array<string>;
 };
 
+const PageHeaderWrapper = styled(Box)(({theme}) => ({
+    textAlign: 'center',
+    marginBottom: '2rem',
+    color: theme.palette.primary.main,
+}));
+
+const Title = styled(Typography)(({theme}) => ({
+    textAlign: 'center',
+    marginBottom: '2rem',
+    color: theme.palette.primary.main,
+}));
+
+const SubTitle = styled(Typography)(({theme}) => ({
+    textAlign: 'center',
+    marginBottom: '4rem',
+    color: theme.palette.text.primary,
+}));
+
 export default function BBDevPageHeader(props: BBDevPageHeaderParams) {
     return (
-        <Box className={styles['page-header']}>
-            <Typography variant='h3' component='h1' gutterBottom>
+        <PageHeaderWrapper>
+            <Title variant='h2' gutterBottom>
                 {props.title}
-            </Typography>
-            <Typography variant='body1' paragraph>
+            </Title>
+            <SubTitle variant='body1' paragraph>
                 {props.subTitle.map((subTitle, index) => (
                     <span key={index}>
                         {index > 0 && <br />}
                         {subTitle}
                     </span>
                 ))}
-            </Typography>
-        </Box>
+            </SubTitle>
+        </PageHeaderWrapper>
     );
 }

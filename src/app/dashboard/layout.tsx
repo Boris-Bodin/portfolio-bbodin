@@ -1,8 +1,8 @@
 import React from 'react';
 import {Metadata} from 'next';
 
-import {AppBar, Avatar, Box, Button, Container, Toolbar} from '@mui/material';
-import Link from 'next/link';
+import {Box, Container} from '@mui/material';
+import AppToolbar from '@/shared/components/app-toolbar/AppToolbar';
 
 export const metadata: Metadata = {
     title: 'Boris Bodin • Website',
@@ -13,36 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
     return (
         <Box>
-            <AppBar position='sticky'>
-                <Toolbar>
-                    <Box sx={{flexGrow: 1}}>
-                        <Link href={'/'}>
-                            <Avatar alt='Boris Bodin' src='/images/avatar.jpg' />
-                        </Link>
-                    </Box>
-
-                    <Box sx={{flexGrow: 0}}>
-                        <Link href={'/dashboard'}>
-                            <Button color='inherit'>Home</Button>
-                        </Link>
-                        <Link href={'/dashboard/skills'}>
-                            <Button color='inherit'>Skills</Button>
-                        </Link>
-                        <Link href={'/dashboard/projects'}>
-                            <Button color='inherit'>Projects</Button>
-                        </Link>
-                        <Link href={'/dashboard/courses'}>
-                            <Button color='inherit'>Courses</Button>
-                        </Link>
-                        <Link href={'/dashboard/contact'}>
-                            <Button color='inherit'>Contact</Button>
-                        </Link>
-                        <Link href={'/dashboard/blogs'}>
-                            <Button color='inherit'>Blogs</Button>
-                        </Link>
-                    </Box>
-                </Toolbar>
-            </AppBar>
+            <AppToolbar />
             <Container maxWidth={false} sx={{pb: 2}}>
                 {children}
             </Container>

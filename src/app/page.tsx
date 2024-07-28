@@ -29,6 +29,10 @@ const ProfilSection = styled(Box)(({theme}) => ({
     flexDirection: 'column',
     alignItems: 'center',
     gap: '10px',
+    'h2': {
+        textAlign: 'center',
+        fontSize: '16px',
+    },
 }));
 
 const ProfilTextSection = styled(Box)(({theme}) => ({
@@ -39,11 +43,6 @@ const ProfilTextSection = styled(Box)(({theme}) => ({
     color: 'white',
 }));
 
-const ProfilDescription = styled(Typography)(({theme}) => ({
-    textAlign: 'center',
-    fontSize: '16px',
-}));
-
 const SocialGroupPanel = styled(Container)(({theme}) => ({
     display: 'flex',
     flexDirection: 'column',
@@ -51,20 +50,25 @@ const SocialGroupPanel = styled(Container)(({theme}) => ({
     gap: '10px',
 }));
 
+const AvatarProfil = styled(Avatar)(({theme}) => ({
+    height: 96,
+    width: 96,
+}));
+
 export default function Page() {
     return (
         <SocialPageContainer>
             <SocialPagePanel maxWidth='sm'>
                 <ProfilSection>
-                    <Avatar alt='Boris Bodin' src='/images/avatar.jpg' sx={{height: 96, width: 96}} />
+                    <AvatarProfil alt='Boris Bodin' src='/images/avatar.jpg' />
                     <ProfilTextSection>
                         <Typography variant='h3' component='h1'>
                             Boris Bodin
                         </Typography>
-                        <ProfilDescription variant='h4' component='h2'>
+                        <Typography variant='h4' component='h2'>
                             A jack-of-all-trades, computer development, cooking, music, video, writing, sketching, video games,
                             you name it!
-                        </ProfilDescription>
+                        </Typography>
                     </ProfilTextSection>
                 </ProfilSection>
                 <SocialGroupPanel>

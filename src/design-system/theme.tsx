@@ -27,33 +27,33 @@ const theme = experimental_extendTheme({
     typography: {
         fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
         h1: {
-            fontSize: '1.875rem',
-            lineHeight: '2.25rem',
+            fontSize: '1.5rem',
+            lineHeight: '2.0rem',
             fontWeight: 700,
         },
         h2: {
-            fontSize: '1.5rem',
-            lineHeight: '2rem',
+            fontSize: '1.25rem',
+            lineHeight: '1.75rem',
             fontWeight: 700,
         },
         h3: {
-            fontSize: '1.25rem',
-            lineHeight: '1.75rem',
-            fontWeight: 500,
-        },
-        h4: {
-            fontSize: '1.25rem',
+            fontSize: '1rem',
             lineHeight: '1.5rem',
             fontWeight: 500,
         },
-        h5: {
-            fontSize: '1.25rem',
+        h4: {
+            fontSize: '1rem',
             lineHeight: '1.25rem',
+            fontWeight: 500,
+        },
+        h5: {
+            fontSize: '1rem',
+            lineHeight: '1rem',
             fontWeight: 400,
         },
         h6: {
-            fontSize: '1rem',
-            lineHeight: '1.25rem',
+            fontSize: '0.875rem',
+            lineHeight: '1rem',
             fontWeight: 400,
         },
         body1: {

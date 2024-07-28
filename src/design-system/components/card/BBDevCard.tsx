@@ -1,7 +1,6 @@
 'use client';
 import React, {MouseEvent} from 'react';
-import {Box, Button, Paper, Typography} from '@mui/material';
-import styles from './BBDevCard.module.scss';
+import {Box, Button, Paper, styled, Typography} from '@mui/material';
 
 type BBDevCardParams = {
     title: string;
@@ -12,28 +11,71 @@ type BBDevCardParams = {
     action?: (event: MouseEvent<Element>) => void;
 };
 
+const Card = styled(Paper)(({theme}) => ({
+    textAlign: 'center',
+    transition: 'transform 0.3s ease-in-out',
+    '&:hover': {
+        transform: 'translateY(-5px)',
+    },
+}));
+
+const CardImageContainer = styled(Box)(({theme}) => ({
+    maxHeight: '200px',
+    overflow: 'hidden',
+}));
+
+const CardImage = styled(Box)(({theme}) => ({
+    width: '100%',
+    height: 'auto',
+    transition: 'transform 0.3s ease-in-out',
+    '&:hover': {
+        transform: 'scale(1.05)',
+    },
+}));
+
+const CardContent = styled(Box)(({theme}) => ({
+    padding: '1rem',
+    textAlign: 'center',
+}));
+
+const CardIconContent = styled(Box)(({theme}) => ({
+    color: theme.palette.primary.main,
+}));
+
+const CardTitle = styled(Typography)(({theme}) => ({
+    marginTop: '1rem',
+    marginBottom: '0.5rem',
+    color: theme.palette.primary.main,
+}));
+
+const CardDescription = styled(Typography)(({theme}) => ({
+    color: theme.palette.text.secondary,
+}));
+
+const CardAction = styled(Button)(({theme}) => ({
+    marginTop: '1rem',
+}));
+
 export default function BBDevCard(props: BBDevCardParams) {
     return (
-        <Paper elevation={3} className={styles['card']}>
+        <Card elevation={3}>
             {props.image && (
-                <Box className={styles['card-image-container']}>
-                    <img src={props.image} alt={props.title} className={styles['card-image']} />
-                </Box>
+                <CardImageContainer>
+                    <CardImage>
+                        <img src={props.image} alt={props.title} width='100%' height='auto' />
+                    </CardImage>
+                </CardImageContainer>
             )}
-            <Box className={styles['card-content']}>
-                {props.icon && <Box className={styles['card-icon-container']}>{props.icon}</Box>}
-                <Typography variant='h6' component='h3' className={styles['card-title']}>
-                    {props.title}
-                </Typography>
-                <Typography variant='body2' className={styles['card-description']}>
-                    {props.description}
-                </Typography>
+            <CardContent>
+                {props.icon && <CardIconContent>{props.icon}</CardIconContent>}
+                <CardTitle variant='h4'>{props.title}</CardTitle>
+                <CardDescription variant='body2'>{props.description}</CardDescription>
                 {props.action && (
-                    <Button variant='contained' color='primary' onClick={props.action} className={styles['card-action']}>
+                    <CardAction variant='contained' color='primary' onClick={props.action}>
                         {props.actionTitle}
-                    </Button>
+                    </CardAction>
                 )}
-            </Box>
-        </Paper>
+            </CardContent>
+        </Card>
     );
 }
