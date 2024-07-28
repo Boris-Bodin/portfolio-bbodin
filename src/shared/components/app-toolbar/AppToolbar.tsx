@@ -8,6 +8,7 @@ const HeaderHomeLink = styled(Box)(({theme}) => ({
     display: 'flex',
     flexDirection: 'row',
     gap: '25px',
+    alignItems: 'center',
 }));
 
 export default function AppToolbar() {

@@ -4,12 +4,12 @@ import {Container, Grid} from '@mui/material';
 import BBDevPageHeader from '../../../design-system/components/page-header/BBDevPageHeader';
 import BBDevCard from '../../../design-system/components/card/BBDevCard';
 
-const courses = [
+type Course = {image?: string; link?: string; description: string; title: string};
+
+const courses: Array<Course> = [
     {
-        title: 'WIP',
-        description: 'WIP',
-        image: '/images/course1.jpg',
-        link: '',
+        title: 'Basic CSS concepts (WIP)',
+        description: 'Présentation de plusieurs concepts de base du CSS',
     },
     // {
     //     title: 'Course Two',
@@ -38,12 +38,20 @@ export default function CoursesPage() {
             <Grid container spacing={4}>
                 {courses.map((course, index) => (
                     <Grid item xs={12} md={4} key={index}>
-                        <BBDevCard
-                            title={course.title}
-                            description={course.description}
-                            image={course.image}
-                            actionTitle={'View Course'}
-                            action={openCourse(course.link)}></BBDevCard>
+                        {course.link ? (
+                            <BBDevCard
+                                title={course.title}
+                                description={course.description}
+                                image={course.image}
+                                actionTitle={'View Course'}
+                                action={openCourse(course.link)}></BBDevCard>
+                        ) : (
+                            <BBDevCard
+                                title={course.title}
+                                description={course.description}
+                                image={course.image}
+                                actionTitle={'View Course'}></BBDevCard>
+                        )}
                     </Grid>
                 ))}
             </Grid>

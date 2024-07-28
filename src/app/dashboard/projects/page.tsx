@@ -4,12 +4,12 @@ import {Container, Grid} from '@mui/material';
 import BBDevPageHeader from '../../../design-system/components/page-header/BBDevPageHeader';
 import BBDevCard from '../../../design-system/components/card/BBDevCard';
 
-const projects = [
+type Project = {image?: string; link?: string; description: string; title: string};
+
+const projects: Array<Project> = [
     {
         title: 'WIP',
         description: 'WIP',
-        image: '/images/project1.jpg',
-        link: '',
     },
     // {
     //     title: 'Project Two',
@@ -36,12 +36,20 @@ export default function ProjectsPage() {
             <Grid container spacing={4}>
                 {projects.map((project, index) => (
                     <Grid item xs={12} md={4} key={index}>
-                        <BBDevCard
-                            title={project.title}
-                            description={project.description}
-                            image={project.image}
-                            actionTitle={'View Project'}
-                            action={openProject(project.link)}></BBDevCard>
+                        {project.link ? (
+                            <BBDevCard
+                                title={project.title}
+                                description={project.description}
+                                image={project.image}
+                                actionTitle={'View Course'}
+                                action={openProject(project.link)}></BBDevCard>
+                        ) : (
+                            <BBDevCard
+                                title={project.title}
+                                description={project.description}
+                                image={project.image}
+                                actionTitle={'View Course'}></BBDevCard>
+                        )}
                     </Grid>
                 ))}
             </Grid>
