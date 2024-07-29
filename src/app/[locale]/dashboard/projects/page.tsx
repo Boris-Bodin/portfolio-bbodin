@@ -1,8 +1,8 @@
 'use client';
 import React, {MouseEvent} from 'react';
 import {Container, Grid} from '@mui/material';
-import BBDevPageHeader from '../../../design-system/components/page-header/BBDevPageHeader';
-import BBDevCard from '../../../design-system/components/card/BBDevCard';
+import BBDevPageHeader from '../../../../design-system/components/page-header/BBDevPageHeader';
+import BBDevCard from '../../../../design-system/components/card/BBDevCard';
 
 type Project = {image?: string; link?: string; description: string; title: string};
 

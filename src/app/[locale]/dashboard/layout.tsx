@@ -2,7 +2,7 @@ import React from 'react';
 import {Metadata} from 'next';
 
 import {Box, Container} from '@mui/material';
-import AppToolbar from '@/shared/components/app-toolbar/AppToolbar';
+import AppToolbar from '@/shared/components/AppToolbar';
 
 export const metadata: Metadata = {
     title: 'Boris Bodin • Website',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
         'Software Engineer. Web creator and educator about Code. I like to create things and help people who want to learn more and faster.',
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function DashboardLayout({children}: {children: React.ReactNode}) {
     return (
         <Box>
             <AppToolbar />

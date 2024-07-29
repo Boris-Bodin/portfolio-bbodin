@@ -17,7 +17,7 @@ export default function AppToolbar() {
             <Toolbar>
                 <Link href={'/'}>
                     <HeaderHomeLink>
-                        <Avatar alt='Boris Bodin' src='/images/avatar.jpg' />
+                        <Avatar alt='Boris Bodin' src='/static/images/avatar.jpg' />
                         <Typography variant='h1'>Boris Bodin</Typography>
                     </HeaderHomeLink>
                 </Link>

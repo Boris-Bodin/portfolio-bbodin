@@ -1,9 +1,9 @@
 'use client';
 import React, {MouseEvent, useEffect, useState} from 'react';
 import {Box, CircularProgress, Container, Grid} from '@mui/material';
-import getMediumPost from '@/app/dashboard/blogs/actions';
-import BBDevPageHeader from '../../../design-system/components/page-header/BBDevPageHeader';
-import BBDevCard from '../../../design-system/components/card/BBDevCard';
+import getMediumPost from '@/app/[locale]/dashboard/blogs/actions';
+import BBDevPageHeader from '../../../../design-system/components/page-header/BBDevPageHeader';
+import BBDevCard from '../../../../design-system/components/card/BBDevCard';
 
 interface Article {
     title: string;

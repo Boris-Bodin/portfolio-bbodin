@@ -2,8 +2,8 @@
 import React from 'react';
 import {Container, Grid} from '@mui/material';
 import {Build, Code, Computer, Language, Security, Storage} from '@mui/icons-material';
-import BBDevPageHeader from '../../../design-system/components/page-header/BBDevPageHeader';
-import BBDevCard from '../../../design-system/components/card/BBDevCard';
+import BBDevPageHeader from '../../../../design-system/components/page-header/BBDevPageHeader';
+import BBDevCard from '../../../../design-system/components/card/BBDevCard';
 
 const skills = [
     {

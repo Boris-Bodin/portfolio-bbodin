@@ -1,13 +1,16 @@
 'use client';
 import React from 'react';
 import {Avatar, Box, Container, styled, Typography} from '@mui/material';
-import SocialButton from '@/shared/components/social-button/SocialButton';
+import SocialButton from '@/shared/components/SocialButton';
+import {useTranslation} from 'react-i18next';
+import {I18nTranslations} from '@/app/i18n';
+import LanguageChanger from '@/shared/components/LanguageChanger';
 
 const SocialPageContainer = styled(Box)(({theme}) => ({
     backgroundColor: 'black',
     height: '100%',
     width: '100%',
-    backgroundImage: 'url(/images/banner.png)',
+    backgroundImage: 'url(/static/images/banner.png)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
@@ -55,19 +58,21 @@ const AvatarProfil = styled(Avatar)(({theme}) => ({
     width: 96,
 }));
 
-export default function Page() {
+export default function LinkBioPage() {
+    const {t} = useTranslation();
+
     return (
         <SocialPageContainer>
             <SocialPagePanel maxWidth='sm'>
+                <LanguageChanger />
                 <ProfilSection>
-                    <AvatarProfil alt='Boris Bodin' src='/images/avatar.jpg' />
+                    <AvatarProfil alt='Boris Bodin' src='/static/images/avatar.jpg' />
                     <ProfilTextSection>
                         <Typography variant='h3' component='h1'>
                             Boris Bodin
                         </Typography>
                         <Typography variant='h4' component='h2'>
-                            A jack-of-all-trades, computer development, cooking, music, video, writing, sketching, video games,
-                            you name it!
+                            {t('subTitle')}
                         </Typography>
                     </ProfilTextSection>
                 </ProfilSection>
