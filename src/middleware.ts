@@ -29,6 +29,7 @@ export function middleware(request: NextRequest) {
 
         return NextResponse.redirect(new URL(`/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`, request.url));
     }
+    return NextResponse.next();
 }
 
 export const config = {

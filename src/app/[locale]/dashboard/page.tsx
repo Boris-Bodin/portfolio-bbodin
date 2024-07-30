@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import {Container, Grid, styled, Typography} from '@mui/material';
+import {Container, Grid, styled} from '@mui/material';
 import {Article, Code, Email, Folder, School} from '@mui/icons-material';
 import Link from 'next/link';
 import BBDevCard from '../../../design-system/components/card/BBDevCard';

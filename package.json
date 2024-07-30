@@ -54,6 +54,7 @@
         "@tanstack/eslint-plugin-query": "^5.50.1",
         "@testing-library/react": "^16.0.0",
         "@testing-library/react-hooks": "^8.0.1",
+        "@types/negotiator": "^0.6.3",
         "@types/node": "20.14.10",
         "@types/react": "18.2.48",
         "@typescript-eslint/eslint-plugin": "^7.16.0",

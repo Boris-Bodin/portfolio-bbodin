@@ -3,7 +3,6 @@ import React from 'react';
 import {Avatar, Box, Container, styled, Typography} from '@mui/material';
 import SocialButton from '@/shared/components/SocialButton';
 import {useTranslation} from 'react-i18next';
-import {I18nTranslations} from '@/app/i18n';
 import LanguageChanger from '@/shared/components/LanguageChanger';
 
 const SocialPageContainer = styled(Box)(({theme}) => ({

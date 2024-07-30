@@ -2,6 +2,7 @@
 
 import {usePathname, useRouter} from 'next/navigation';
 import {useTranslation} from 'react-i18next';
+import {ChangeEvent} from 'react';
 
 export default function LanguageChanger() {
     const {i18n} = useTranslation();
@@ -9,18 +10,19 @@ export default function LanguageChanger() {
     const router = useRouter();
     const currentPathname = usePathname();
 
-    const handleChange = (e) => {
-        const newLocale = e.target.value;
-
-        // set cookie for next-i18n-router
+    function setCookie(newLocale: any) {
         const days = 30;
         const date = new Date();
         date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
         const expires = date.toUTCString();
         document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
+    }
 
+    const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        const newLocale = e.target.value;
+
+        setCookie(newLocale);
         router.push(currentPathname.replace(`/${currentLocale}`, `/${newLocale}`));
-
         router.refresh();
     };
 

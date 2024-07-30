@@ -7,7 +7,7 @@ import {AppRouterCacheProvider} from '@mui/material-nextjs/v13-appRouter';
 import theme from '../../design-system/theme';
 import {CssBaseline, Experimental_CssVarsProvider} from '@mui/material';
 import TranslationProvider from '@/shared/components/TranslationProvider';
-import initTranslations from '@/app/i18n';
+import initTranslations, {NamespaceKey} from '@/app/i18n';
 
 export const metadata: Metadata = {
     title: 'Boris Bodin • Website',
@@ -20,10 +20,10 @@ interface RootLayoutProps {
     params: {locale: Locale};
 }
 
-const i18nNamespaces = ['link-in-bio', 'dashboard'];
+const i18nNamespaces: Array<NamespaceKey> = ['link-in-bio', 'dashboard'];
 
 export default async function RootLayout({children, params}: RootLayoutProps) {
-    const {t, resources} = await initTranslations(params.locale, i18nNamespaces);
+    const {resources} = await initTranslations(params.locale, i18nNamespaces);
 
     return (
         <html lang={params.locale}>
