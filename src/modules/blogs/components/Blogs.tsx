@@ -19,7 +19,7 @@ export default function Blogs({articles}: BlogsProps) {
             <BBDevPageHeader title={'My Blog'} subTitle={['Here are the latest articles.']}></BBDevPageHeader>
             <Grid container spacing={4}>
                 {articles.map((article, index) => (
-                    <Grid item xs={12} md={4} key={index} className={'grid-item'}>
+                    <Grid item xs={12} md={4} key={index} sx={{'>*':{height:'100%'}}}>
                         <BBDevCard
                             title={article.title}
                             description={article.contentSnippet}
