@@ -68,22 +68,11 @@ const theme = experimental_extendTheme({
         },
     },
     components: {
-        MuiPaper: {
-            styleOverrides: {
-                root: {
-                    padding: '16px',
-                    marginBottom: '16px',
-                },
-            },
-        },
         MuiButton: {
             styleOverrides: {
                 root: {
                     borderRadius: '8px',
                     textTransform: 'none',
-                    // 'contained.colorPrimary': {
-                    //     color: '#FFFFFF',
-                    // },
                 },
             },
         },

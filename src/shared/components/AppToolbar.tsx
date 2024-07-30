@@ -3,6 +3,7 @@ import React from 'react';
 
 import {AppBar, Avatar, Box, Button, styled, Toolbar, Typography} from '@mui/material';
 import Link from 'next/link';
+import LanguageChanger from '@/shared/components/LanguageChanger';
 
 const HeaderHomeLink = styled(Box)(({theme}) => ({
     display: 'flex',
@@ -42,6 +43,7 @@ export default function AppToolbar() {
                     <Link href={'/dashboard/blogs'}>
                         <Button color='inherit'>Blogs</Button>
                     </Link>
+                    <LanguageChanger />
                 </Box>
             </Toolbar>
         </AppBar>

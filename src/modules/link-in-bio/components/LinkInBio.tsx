@@ -62,15 +62,17 @@ export default function LinkInBio() {
 
     return (
         <BackgroundContainer>
-            <OverlayContainer maxWidth='sm'>
+            <Box position="absolute" sx={{top: '0', right: '0', padding: '5px'}}>
                 <LanguageChanger />
+            </Box>
+            <OverlayContainer maxWidth="sm">
                 <ProfileSection>
-                    <ProfileAvatar alt='Boris Bodin' src='/static/images/avatar.jpg' />
+                    <ProfileAvatar alt="Boris Bodin" src="/static/images/avatar.jpg" />
                     <ProfileText>
-                        <Typography variant='h3' component='h1'>
+                        <Typography variant="h3" component="h1">
                             Boris Bodin
                         </Typography>
-                        <Typography variant='h4' component='h2'>
+                        <Typography variant="h4" component="h2">
                             {t('subTitle')}
                         </Typography>
                     </ProfileText>

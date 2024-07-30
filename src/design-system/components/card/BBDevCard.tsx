@@ -34,7 +34,8 @@ const CardImage = styled(Box)(({theme}) => ({
 }));
 
 const CardContent = styled(Box)(({theme}) => ({
-    padding: '1rem',
+    // padding: '1rem',
+    padding: theme.spacing(5),
     textAlign: 'center',
 }));
 
@@ -43,8 +44,8 @@ const CardIconContent = styled(Box)(({theme}) => ({
 }));
 
 const CardTitle = styled(Typography)(({theme}) => ({
-    marginTop: '1rem',
-    marginBottom: '0.5rem',
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(1),
     color: theme.palette.primary.main,
 }));
 
@@ -53,7 +54,7 @@ const CardDescription = styled(Typography)(({theme}) => ({
 }));
 
 const CardAction = styled(Button)(({theme}) => ({
-    marginTop: '1rem',
+    marginTop: theme.spacing(2),
 }));
 
 export default function BBDevCard(props: BBDevCardParams) {

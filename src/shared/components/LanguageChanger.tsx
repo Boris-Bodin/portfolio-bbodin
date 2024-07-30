@@ -2,7 +2,8 @@
 
 import {usePathname, useRouter} from 'next/navigation';
 import {useTranslation} from 'react-i18next';
-import {ChangeEvent} from 'react';
+import {SelectChangeEvent} from '@mui/material/Select/SelectInput';
+import {FormControl, MenuItem, Select} from '@mui/material';
 
 export default function LanguageChanger() {
     const {i18n} = useTranslation();
@@ -18,7 +19,7 @@ export default function LanguageChanger() {
         document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
     }
 
-    const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const handleChange = (e: SelectChangeEvent<string>) => {
         const newLocale = e.target.value;
 
         setCookie(newLocale);
@@ -27,9 +28,38 @@ export default function LanguageChanger() {
     };
 
     return (
-        <select onChange={handleChange} value={currentLocale}>
-            <option value='en'>English</option>
-            <option value='fr'>French</option>
-        </select>
+        <FormControl variant="outlined" size="small" sx={{minWidth: 48}}>
+            <Select
+                value={currentLocale}
+                onChange={handleChange}
+                displayEmpty
+                sx={{
+                    '.MuiOutlinedInput-notchedOutline': {
+                        borderColor: 'white',
+                    },
+                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                        borderColor: 'white',
+                    },
+                    '.MuiSvgIcon-root': {
+                        color: 'white',
+                    },
+                    '&& .MuiSelect-select': {
+                        color: 'white',
+                    },
+                    ':hover': {
+                        '.MuiOutlinedInput-notchedOutline': {
+                            borderColor: 'silver',
+                        },
+                    },
+                }}
+            >
+                <MenuItem value="en">
+                    <span role="img" aria-label="English">🇺🇸</span>
+                </MenuItem>
+                <MenuItem value="fr">
+                    <span role="img" aria-label="French">🇫🇷</span>
+                </MenuItem>
+            </Select>
+        </FormControl>
     );
 }
