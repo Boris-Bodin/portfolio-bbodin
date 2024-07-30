@@ -5,7 +5,7 @@ import SocialButton from '@/shared/components/SocialButton';
 import {useTranslation} from 'react-i18next';
 import LanguageChanger from '@/shared/components/LanguageChanger';
 
-const SocialPageContainer = styled(Box)(({theme}) => ({
+const BackgroundContainer = styled(Box)(({theme}) => ({
     backgroundColor: 'black',
     height: '100%',
     width: '100%',
@@ -15,7 +15,7 @@ const SocialPageContainer = styled(Box)(({theme}) => ({
     backgroundAttachment: 'fixed',
 }));
 
-const SocialPagePanel = styled(Container)(({theme}) => ({
+const OverlayContainer = styled(Container)(({theme}) => ({
     padding: '64px 16px 32px',
     height: '100%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -26,7 +26,7 @@ const SocialPagePanel = styled(Container)(({theme}) => ({
     overflow: 'auto',
 }));
 
-const ProfilSection = styled(Box)(({theme}) => ({
+const ProfileSection = styled(Box)(({theme}) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -37,7 +37,7 @@ const ProfilSection = styled(Box)(({theme}) => ({
     },
 }));
 
-const ProfilTextSection = styled(Box)(({theme}) => ({
+const ProfileText = styled(Box)(({theme}) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -45,14 +45,14 @@ const ProfilTextSection = styled(Box)(({theme}) => ({
     color: 'white',
 }));
 
-const SocialGroupPanel = styled(Container)(({theme}) => ({
+const SocialLinksContainer = styled(Container)(({theme}) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     gap: '10px',
 }));
 
-const AvatarProfil = styled(Avatar)(({theme}) => ({
+const ProfileAvatar = styled(Avatar)(({theme}) => ({
     height: 96,
     width: 96,
 }));
@@ -61,21 +61,21 @@ export default function LinkInBio() {
     const {t} = useTranslation();
 
     return (
-        <SocialPageContainer>
-            <SocialPagePanel maxWidth='sm'>
+        <BackgroundContainer>
+            <OverlayContainer maxWidth='sm'>
                 <LanguageChanger />
-                <ProfilSection>
-                    <AvatarProfil alt='Boris Bodin' src='/static/images/avatar.jpg' />
-                    <ProfilTextSection>
+                <ProfileSection>
+                    <ProfileAvatar alt='Boris Bodin' src='/static/images/avatar.jpg' />
+                    <ProfileText>
                         <Typography variant='h3' component='h1'>
                             Boris Bodin
                         </Typography>
                         <Typography variant='h4' component='h2'>
                             {t('subTitle')}
                         </Typography>
-                    </ProfilTextSection>
-                </ProfilSection>
-                <SocialGroupPanel>
+                    </ProfileText>
+                </ProfileSection>
+                <SocialLinksContainer>
                     <SocialButton media={'PORTFOLIO'} url={'/dashboard/'} />
                     <SocialButton media={'LINKEDIN'} url={'https://www.linkedin.com/in/boris-bodin/'} />
                     <SocialButton media={'MEDIUM'} url={'https://medium.aegis-techno.fr/'} />
@@ -84,9 +84,9 @@ export default function LinkInBio() {
                     <SocialButton media={'TWITCH'} url={'https://www.twitch.tv/boris_bodin'} />
                     <SocialButton media={'TIKTOK'} url={'https://www.tiktok.com/@boris.bodin'} />
                     <SocialButton media={'INSTAGRAM'} url={'https://www.instagram.com/borisbodin/'} />
-                    <SocialButton media={'YOU_TUBE'} url={'https://www.youtube.com/channel/UCrGJIKIHNlDKwIPac9UML6g'} />
-                </SocialGroupPanel>
-            </SocialPagePanel>
-        </SocialPageContainer>
+                    <SocialButton media={'YOUTUBE'} url={'https://www.youtube.com/channel/UCrGJIKIHNlDKwIPac9UML6g'} />
+                </SocialLinksContainer>
+            </OverlayContainer>
+        </BackgroundContainer>
     );
 }
