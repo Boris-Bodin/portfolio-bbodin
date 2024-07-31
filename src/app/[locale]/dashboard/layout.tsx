@@ -1,7 +1,7 @@
 import React from 'react';
 import {Metadata} from 'next';
 
-import {Box, Container} from '@mui/material';
+import {Container} from '@mui/material';
 import AppToolbar from '@/shared/components/AppToolbar';
 
 export const metadata: Metadata = {
@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 
 export default function DashboardLayout({children}: {children: React.ReactNode}) {
     return (
-        <Box>
+        <>
             <AppToolbar />
             <Container maxWidth={false} sx={{pb: 2}}>
                 {children}
             </Container>
-        </Box>
+        </>
     );
 }

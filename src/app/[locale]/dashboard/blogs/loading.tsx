@@ -1,9 +1,15 @@
-import {Box, CircularProgress} from '@mui/material';
+import {CircularProgress, styled} from '@mui/material';
+import CenterColBox from '@/shared/components/CenterColBox';
+
+const SpinnerContainer = styled(CenterColBox)(({theme}) => ({
+    minHeight: '60vh',
+    justifyContent: 'center',
+}));
 
 export default function Loading() {
     return (
-        <Box display='flex' justifyContent='center' alignItems='center' minHeight='60vh'>
+        <SpinnerContainer>
             <CircularProgress />
-        </Box>
+        </SpinnerContainer>
     );
 }

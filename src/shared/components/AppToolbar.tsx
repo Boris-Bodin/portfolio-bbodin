@@ -4,12 +4,10 @@ import React from 'react';
 import {AppBar, Avatar, Box, Button, styled, Toolbar, Typography} from '@mui/material';
 import Link from 'next/link';
 import LanguageChanger from '@/shared/components/LanguageChanger';
+import CenterRowBox from '@/shared/components/CenterRowBox';
 
-const HeaderHomeLink = styled(Box)(({theme}) => ({
-    display: 'flex',
-    flexDirection: 'row',
-    gap: '25px',
-    alignItems: 'center',
+const HeaderHomeLink = styled(CenterRowBox)(({theme}) => ({
+    gap: theme.spacing(4),
 }));
 
 export default function AppToolbar() {

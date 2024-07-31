@@ -28,7 +28,7 @@ export default function LanguageChanger() {
     };
 
     return (
-        <FormControl variant="outlined" size="small" sx={{minWidth: 48}}>
+        <FormControl variant='outlined' size='small' sx={{minWidth: 48}}>
             <Select
                 value={currentLocale}
                 onChange={handleChange}
@@ -52,12 +52,16 @@ export default function LanguageChanger() {
                         },
                     },
                 }}
-            >
-                <MenuItem value="en">
-                    <span role="img" aria-label="English">🇺🇸</span>
+                variant={'outlined'}>
+                <MenuItem value='en'>
+                    <span role='img' aria-label='English'>
+                        🇺🇸
+                    </span>
                 </MenuItem>
-                <MenuItem value="fr">
-                    <span role="img" aria-label="French">🇫🇷</span>
+                <MenuItem value='fr'>
+                    <span role='img' aria-label='French'>
+                        🇫🇷
+                    </span>
                 </MenuItem>
             </Select>
         </FormControl>

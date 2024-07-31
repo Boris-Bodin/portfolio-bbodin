@@ -30,16 +30,15 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
             <head>
                 <meta charSet='utf-8' />
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
-                {/*<meta name="robots" content="noindex, nofollow" />*/}
                 <link rel='icon' sizes='16x16' href='/static/images/favicon-16x16.png' />
                 <link rel='icon' sizes='32x32' href='/static/images/favicon-32x32.png' />
                 <link rel='icon' href='/static/images/favicon.ico' />
             </head>
             <body suppressHydrationWarning={true}>
                 <React.StrictMode>
+                    <CssBaseline />
                     <AppRouterCacheProvider>
                         <Experimental_CssVarsProvider theme={theme}>
-                            <CssBaseline />
                             <TranslationProvider namespaces={i18nNamespaces} locale={params.locale} resources={resources}>
                                 {children}
                             </TranslationProvider>

@@ -6,20 +6,20 @@ const theme = experimental_extendTheme({
         light: {
             palette: {
                 primary: {
-                    main: '#0D47A1', // A deep blue color
-                    contrastText: '#FFFFFF', // White text
+                    main: '#0D47A1',
+                    contrastText: '#FFFFFF',
                 },
                 secondary: {
-                    main: '#FF5722', // A vibrant orange color
-                    contrastText: '#FFFFFF', // White text
+                    main: '#FF5722',
+                    contrastText: '#FFFFFF',
                 },
                 background: {
-                    default: '#F5F5F5', // A light grey background
-                    paper: '#FFFFFF', // White paper background
+                    default: '#F5F5F5',
+                    paper: '#FFFFFF',
                 },
                 text: {
-                    primary: '#212121', // Dark grey text
-                    secondary: '#757575', // Medium grey text
+                    primary: '#212121',
+                    secondary: '#757575',
                 },
             },
         },
