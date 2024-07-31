@@ -62,17 +62,17 @@ export default function LinkInBio() {
 
     return (
         <BackgroundContainer>
-            <Box position="absolute" sx={{top: '0', right: '0', padding: '5px'}}>
+            <Box position='absolute' sx={{top: '0', right: '0', padding: '5px'}}>
                 <LanguageChanger />
             </Box>
-            <OverlayContainer maxWidth="sm">
+            <OverlayContainer maxWidth='sm'>
                 <ProfileSection>
-                    <ProfileAvatar alt="Boris Bodin" src="/static/images/avatar.jpg" />
+                    <ProfileAvatar alt='Boris Bodin' src='/static/images/avatar.jpg' />
                     <ProfileText>
-                        <Typography variant="h3" component="h1">
+                        <Typography variant='h3' component='h1'>
                             Boris Bodin
                         </Typography>
-                        <Typography variant="h4" component="h2">
+                        <Typography variant='h4' component='h2'>
                             {t('subTitle')}
                         </Typography>
                     </ProfileText>
@@ -86,7 +86,7 @@ export default function LinkInBio() {
                     <SocialButton media={'TWITCH'} url={'https://www.twitch.tv/boris_bodin'} />
                     <SocialButton media={'TIKTOK'} url={'https://www.tiktok.com/@boris.bodin'} />
                     <SocialButton media={'INSTAGRAM'} url={'https://www.instagram.com/borisbodin/'} />
-                    <SocialButton media={'YOUTUBE'} url={'https://www.youtube.com/channel/UCrGJIKIHNlDKwIPac9UML6g'} />
+                    <SocialButton media={'YOU_TUBE'} url={'https://www.youtube.com/channel/UCrGJIKIHNlDKwIPac9UML6g'} />
                 </SocialLinksContainer>
             </OverlayContainer>
         </BackgroundContainer>
