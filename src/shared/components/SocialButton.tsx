@@ -6,16 +6,17 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import BBDevButton from '../../design-system/components/button/BBDevButton';
+import {useTranslation} from 'react-i18next';
 
 type SocialMediaType = 'TWITCH' | 'INSTAGRAM' | 'MEDIUM' | 'LINKEDIN' | 'TIKTOK' | 'YOU_TUBE' | 'DZONE' | 'PORTFOLIO' | 'TWITTER';
 
 const SocialMedia: {[key: string]: {name: string; icon: React.JSX.Element}} = {
     PORTFOLIO: {
-        name: 'Portfolio',
+        name: 'socialBtn.portfolio',
         icon: <DashboardIcon />,
     },
     MEDIUM: {
-        name: 'Medium',
+        name: 'socialBtn.medium',
         icon: (
             <svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 16 16'>
                 <path
@@ -25,7 +26,7 @@ const SocialMedia: {[key: string]: {name: string; icon: React.JSX.Element}} = {
         ),
     },
     DZONE: {
-        name: 'Dzone',
+        name: 'socialBtn.dzone',
         icon: (
             <svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'>
                 <path
@@ -35,15 +36,15 @@ const SocialMedia: {[key: string]: {name: string; icon: React.JSX.Element}} = {
         ),
     },
     LINKEDIN: {
-        name: 'LinkedIn',
+        name: 'socialBtn.linkedin',
         icon: <LinkedInIcon />,
     },
     TWITTER: {
-        name: 'Twitter',
+        name: 'socialBtn.twitter',
         icon: <TwitterIcon />,
     },
     TWITCH: {
-        name: 'Twitch',
+        name: 'socialBtn.twitch',
         icon: (
             <svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'>
                 <path
@@ -53,7 +54,7 @@ const SocialMedia: {[key: string]: {name: string; icon: React.JSX.Element}} = {
         ),
     },
     TIKTOK: {
-        name: 'Tiktok',
+        name: 'socialBtn.tiktok',
         icon: (
             <svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'>
                 <path
@@ -63,16 +64,18 @@ const SocialMedia: {[key: string]: {name: string; icon: React.JSX.Element}} = {
         ),
     },
     INSTAGRAM: {
-        name: 'Instagram',
+        name: 'socialBtn.instagram',
         icon: <InstagramIcon />,
     },
     YOU_TUBE: {
-        name: 'YouTube',
+        name: 'socialBtn.youtube',
         icon: <YouTubeIcon />,
     },
 };
 
 export default function SocialButton(props: {media: SocialMediaType; url: string}) {
+    const {t} = useTranslation();
+
     const mediaElement = SocialMedia[props.media];
 
     if (mediaElement === undefined) {
@@ -83,5 +86,5 @@ export default function SocialButton(props: {media: SocialMediaType; url: string
         window.open(props.url, '_blank');
     };
 
-    return <BBDevButton icon={mediaElement.icon} text={mediaElement.name} onClick={open} />;
+    return <BBDevButton icon={mediaElement.icon} text={t(mediaElement.name)} onClick={open} />;
 }

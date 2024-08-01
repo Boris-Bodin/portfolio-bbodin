@@ -1,3 +1,15 @@
 {
-    "subTitle": "Un touche-à-tout, développement informatique, cuisine, musique, vidéo, écriture, dessin, jeux vidéo, et j'en passe !"
+    "title": "Boris Bodin",
+    "subTitle": "Un touche-à-tout, développement informatique, cuisine, musique, vidéo, écriture, dessin, jeux vidéo, et j'en passe !",
+    "socialBtn": {
+        "portfolio": "Portfolio",
+        "medium": "Medium",
+        "dzone": "DZone",
+        "linkedin": "LinkedIn",
+        "twitter": "Twitter",
+        "twitch": "Twitch",
+        "tiktok": "TikTok",
+        "instagram": "Instagram",
+        "youtube": "YouTube"
+    }
 }

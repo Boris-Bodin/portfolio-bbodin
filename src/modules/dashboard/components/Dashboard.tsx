@@ -1,76 +1,59 @@
 'use client';
 import React from 'react';
-import {Container, Grid, styled} from '@mui/material';
+import {Container} from '@mui/material';
 import {Article, Code, Email, Folder, School} from '@mui/icons-material';
 import Link from 'next/link';
 import BBDevCard from '../../../design-system/components/card/BBDevCard';
 import BBDevPageHeader from '../../../design-system/components/page-header/BBDevPageHeader';
-
-const GridContainer = styled(Grid)(({theme}) => ({
-    display: 'flex',
-    justifyContent: 'center',
-}));
-
-const GridItem = styled(Grid)(({theme}) => ({
-    display: 'flex',
-    '&>*': {
-        display: 'flex',
-        flexDirection: 'column',
-        flex: 'auto',
-        '&>*': {
-            flex: 'auto',
-        },
-    },
-}));
+import GridContainer from '@/shared/components/containers/GridContainer';
+import GridItem from '@/shared/components/containers/GridItem';
+import {useTranslation} from 'react-i18next';
 
 export default function Dashboard() {
+    const {t} = useTranslation('dashboard');
+
     return (
         <>
             <Container maxWidth='lg' sx={{mt: 4, mb: 4}}>
-                <BBDevPageHeader
-                    title={'Welcome to My Portfolio'}
-                    subTitle={[
-                        "Hi, I'm Boris Bodin",
-                        "I'm a Software Engineer, web creator, and educator passionate about code. I love to create things and help people who want to learn more and faster.",
-                    ]}></BBDevPageHeader>
+                <BBDevPageHeader title={t('title')} subTitle={[t('welcomeMessage'), t('subTitle')]}></BBDevPageHeader>
                 <GridContainer container spacing={4}>
                     <GridItem item xs={12} md={4}>
                         <Link href={'/dashboard/skills'}>
                             <BBDevCard
-                                title={'Skills'}
-                                description={'Explore my technical skills and expertise.'}
+                                title={t('cards.skills.title')}
+                                description={t('cards.skills.description')}
                                 icon={<Code fontSize='large' />}></BBDevCard>
                         </Link>
                     </GridItem>
                     <GridItem item xs={12} md={4}>
                         <Link href={'/dashboard/projects'}>
                             <BBDevCard
-                                title={'Projects'}
-                                description={"Check out the projects I've worked on."}
+                                title={t('cards.projects.title')}
+                                description={t('cards.projects.description')}
                                 icon={<Folder fontSize='large' />}></BBDevCard>
                         </Link>
                     </GridItem>
                     <GridItem item xs={12} md={4}>
                         <Link href={'/dashboard/courses'}>
                             <BBDevCard
-                                title={'Courses'}
-                                description={'Discover the courses I offer.'}
+                                title={t('cards.courses.title')}
+                                description={t('cards.courses.description')}
                                 icon={<School fontSize='large' />}></BBDevCard>
                         </Link>
                     </GridItem>
                     <GridItem item xs={12} md={4}>
                         <Link href={'/dashboard/contact'}>
                             <BBDevCard
-                                title={'Contact'}
-                                description={'Get in touch with me.'}
+                                title={t('cards.contact.title')}
+                                description={t('cards.contact.description')}
                                 icon={<Email fontSize='large' />}></BBDevCard>
                         </Link>
                     </GridItem>
                     <GridItem item xs={12} md={4}>
                         <Link href={'/dashboard/blogs'}>
                             <BBDevCard
-                                title={'Blogs'}
-                                description={'Read my latest blog posts.'}
+                                title={t('cards.blogs.title')}
+                                description={t('cards.blogs.description')}
                                 icon={<Article fontSize='large' />}></BBDevCard>
                         </Link>
                     </GridItem>

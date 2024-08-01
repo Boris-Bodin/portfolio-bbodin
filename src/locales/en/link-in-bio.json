@@ -1,3 +1,15 @@
 {
-    "subTitle": "A jack-of-all-trades, computer development, cooking, music, video, writing, sketching, video games, you name it!"
+    "title": "Boris Bodin",
+    "subTitle": "A jack-of-all-trades, computer development, cooking, music, video, writing, sketching, video games, you name it!",
+    "socialBtn": {
+        "portfolio": "Portfolio",
+        "medium": "Medium",
+        "dzone": "DZone",
+        "linkedin": "LinkedIn",
+        "twitter": "Twitter",
+        "twitch": "Twitch",
+        "tiktok": "TikTok",
+        "instagram": "Instagram",
+        "youtube": "YouTube"
+    }
 }

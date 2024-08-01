@@ -1,8 +1,8 @@
 'use client';
 import {CircularProgress, styled} from '@mui/material';
-import CenterColBox from '@/shared/components/CenterColBox';
+import ColCenterFlexBox from '@/shared/components/containers/CenterColFlexBox';
 
-const SpinnerContainer = styled(CenterColBox)(({theme}) => ({
+const SpinnerContainer = styled(ColCenterFlexBox)(({theme}) => ({
     minHeight: '60vh',
     justifyContent: 'center',
 }));

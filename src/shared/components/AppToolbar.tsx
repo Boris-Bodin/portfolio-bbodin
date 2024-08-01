@@ -4,9 +4,9 @@ import React from 'react';
 import {AppBar, Avatar, Box, Button, styled, Toolbar, Typography} from '@mui/material';
 import Link from 'next/link';
 import LanguageChanger from '@/shared/components/LanguageChanger';
-import CenterRowBox from '@/shared/components/CenterRowBox';
+import RowCenterFlexBox from '@/shared/components/containers/RowCenterFlexBox';
 
-const HeaderHomeLink = styled(CenterRowBox)(({theme}) => ({
+const HeaderHomeLink = styled(RowCenterFlexBox)(({theme}) => ({
     gap: theme.spacing(4),
 }));
 

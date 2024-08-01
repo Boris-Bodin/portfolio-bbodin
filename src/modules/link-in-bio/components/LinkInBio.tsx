@@ -4,8 +4,8 @@ import {Avatar, Box, Container, styled, Typography} from '@mui/material';
 import SocialButton from '@/shared/components/SocialButton';
 import {useTranslation} from 'react-i18next';
 import LanguageChanger from '@/shared/components/LanguageChanger';
-import FullBox from '@/shared/components/FullBox';
-import CenterColBox from '@/shared/components/CenterColBox';
+import FullBox from '@/shared/components/containers/FullBox';
+import ColCenterFlexBox from '@/shared/components/containers/CenterColFlexBox';
 
 const BackgroundContainer = styled(FullBox)(({theme}) => ({
     backgroundColor: 'black',
@@ -15,7 +15,7 @@ const BackgroundContainer = styled(FullBox)(({theme}) => ({
     backgroundAttachment: 'fixed',
 }));
 
-const OverlayContainer = styled(CenterColBox)(({theme}) => ({
+const OverlayContainer = styled(ColCenterFlexBox)(({theme}) => ({
     position: 'relative',
     paddingX: theme.spacing(2),
     paddingTop: theme.spacing(8),
@@ -26,7 +26,7 @@ const OverlayContainer = styled(CenterColBox)(({theme}) => ({
     overflow: 'auto',
 }));
 
-const ProfileSection = styled(CenterColBox)(({theme}) => ({
+const ProfileSection = styled(ColCenterFlexBox)(({theme}) => ({
     gap: theme.spacing(2),
     'h2': {
         textAlign: 'center',
@@ -34,12 +34,12 @@ const ProfileSection = styled(CenterColBox)(({theme}) => ({
     },
 }));
 
-const ProfileText = styled(CenterColBox)(({theme}) => ({
+const ProfileText = styled(ColCenterFlexBox)(({theme}) => ({
     gap: theme.spacing(1),
     color: 'white',
 }));
 
-const SocialLinksContainer = styled(CenterColBox)(({theme}) => ({
+const SocialLinksContainer = styled(ColCenterFlexBox)(({theme}) => ({
     gap: theme.spacing(2),
 }));
 
@@ -66,10 +66,10 @@ export default function LinkInBio() {
                         <LanguageChanger />
                     </LanguageChangerContainer>
                     <ProfileSection>
-                        <ProfileAvatar alt='Boris Bodin' src='/static/images/avatar.jpg' />
+                        <ProfileAvatar alt={t('title')} src='/static/images/avatar.jpg' />
                         <ProfileText>
                             <Typography variant='h3' component='h1'>
-                                Boris Bodin
+                                {t('title')}
                             </Typography>
                             <Typography variant='h4' component='h2'>
                                 {t('subTitle')}

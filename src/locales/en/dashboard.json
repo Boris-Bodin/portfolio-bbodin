@@ -1,9 +1,27 @@
 {
-    "server-component": {
-        "welcome": "Welcome"
-    },
-    "counter": {
-        "increment": "Increment",
-        "decrement": "Decrement"
+    "title": "Welcome to My Portfolio",
+    "welcomeMessage": "Hi, I'm Boris Bodin",
+    "subTitle": "I'm a Software Engineer, web creator, and educator passionate about code. I love to create things and help people who want to learn more.",
+    "cards": {
+        "skills": {
+            "title": "Skills",
+            "description": "Explore my technical skills and expertise."
+        },
+        "projects": {
+            "title": "Projects",
+            "description": "Check out the projects I've worked on."
+        },
+        "courses": {
+            "title": "Courses",
+            "description": "Discover the courses I offer."
+        },
+        "contact": {
+            "title": "Contact",
+            "description": "Get in touch with me."
+        },
+        "blogs": {
+            "title": "Blogs",
+            "description": "Read my latest blog posts."
+        }
     }
 }

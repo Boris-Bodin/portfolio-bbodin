@@ -1,9 +1,27 @@
 {
-    "server-component": {
-        "welcome": "Welcome"
-    },
-    "counter": {
-        "increment": "Increment",
-        "decrement": "Decrement"
+    "title": "Bienvenue sur mon portfolio",
+    "welcomeMessage": "Salut, je m'appelle Boris Bodin",
+    "subTitle": "Je suis un ingénieur logiciel, un créateur en ligne et un formateur passionné par le code. J'aime créer des choses et aider les gens qui veulent en savoir plus.",
+    "cards": {
+        "skills": {
+            "title": "Compétences",
+            "description": "Explorez mes compétences techniques et mon expertise."
+        },
+        "projects": {
+            "title": "Projets",
+            "description": "Découvrez les projets sur lesquels j'ai travaillé."
+        },
+        "courses": {
+            "title": "Cours",
+            "description": "Découvrez les cours que je propose."
+        },
+        "contact": {
+            "title": "Contact",
+            "description": "Prenez contact avec moi."
+        },
+        "blogs": {
+            "title": "Blogs",
+            "description": "Lisez mes derniers articles de blog."
+        }
     }
 }
